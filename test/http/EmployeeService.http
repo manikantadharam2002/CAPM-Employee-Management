@@ -1,0 +1,57 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Employess
+# @name Employess_GET
+GET {{server}}/odata/v4/employee/Employess
+Authorization: Basic {{username}}:{{password}}
+
+
+### Employess
+# @name Employess_POST
+POST {{server}}/odata/v4/employee/Employess
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+ 
+  "employeeName": "Shiva",
+  "email": "shiva@gmail.com",
+  "salary": 11487.8
+  
+}
+
+
+### Employess
+# @name Employess_PATCH
+PATCH {{server}}/odata/v4/employee/Employess('71ec34e8-a8eb-4d97-a39d-bb5f70798b80')
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+ 
+  "employeeName": "Mahesh",
+  "email": "Mahesh@gmail.com",
+  "salary": 4870566.8
+  
+}
+
+
+### Employess
+# @name Employess_DELETE
+DELETE {{server}}/odata/v4/employee/Employess(1850fb59-7158-4524-83e6-e5f08cfd0b56)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### approveEmployee
+# @name approveEmployee_POST
+POST {{server}}/odata/v4/employee/approveEmployee
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "15578149-610c-4985-8f88-1b8fbc1a81d4"
+}
